@@ -16,7 +16,11 @@ const Resume = () => {
   const theme = useTheme();
   const [mount, setMount] = useState(false);
 
+  
+
   useEffect(() => {
+    console.log(mount);
+    console.log(theme);
     setMount(true);
     if (!showResume) {
       router.push("/");

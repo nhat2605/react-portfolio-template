@@ -110,20 +110,19 @@
       }
     ],
     "education": {
-      "universityName": "The University of Sydney",
-      "universityDate": "2021-2025",
-      "universityPara": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
+      "universityName": "The University of Sydney - Bachelor of Engineering Honours (Software Engineering)",
+      "universityDate": "2021-2025 - Penultimate Year",
+      "universityPara": "First-Year Engineering Student Representative"
     },
     "languages": [
-      "Javascript",
-      "HTML5",
-      "CSS",
+      "HTML5 - CSS - Javascript",
+      "SQL",
       "Python"
     ],
     "frameworks": [
       "React",
-      "Typescript",
-      "NodeJs"
+      "NodeJs",
+      "TensorFlow"
     ],
     "others": [
       "Figma",

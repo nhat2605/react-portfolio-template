@@ -12,9 +12,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
   const [mounted, setMounted] = useState(false);
 
   const { name, showBlog, showResume } = data;
-
+  
   useEffect(() => {
     setMounted(true);
+    if (theme == "system")
+      setTheme("dark")
   }, []);
 
   return (
