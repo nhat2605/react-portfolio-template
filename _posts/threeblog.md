@@ -1,6 +1,6 @@
 ---
-date: "2022-07-08T11:50:54.000Z"
-title: Three Blog
+date: '2022-07-08T11:50:54.000Z'
+title: Four Blog
 tagline: This is a Tagline If you want to add.
 preview: >-
   Lorem Ipsum is simply dummy text of the printing and typesetting industry.

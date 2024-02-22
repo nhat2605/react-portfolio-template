@@ -23,55 +23,41 @@ exports.modules = {
 
 
 const Footer = ({})=>{
-    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-        children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: "mt-5 laptop:mt-40 p-2 laptop:p-0",
-                children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                    children: [
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
-                            className: "text-2xl text-bold",
-                            children: "Contact."
-                        }),
-                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                            className: "mt-10",
-                            children: [
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
-                                    className: "text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold",
-                                    children: "LET'S WORK"
-                                }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
-                                    className: "text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold",
-                                    children: "TOGETHER"
-                                }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Button__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
-                                    type: "primary",
-                                    children: "Schedule a call"
-                                }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                    className: "mt-10",
-                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Socials__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {})
-                                })
-                            ]
-                        })
-                    ]
-                })
-            }),
-            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h1", {
-                className: "text-sm text-bold mt-2 laptop:mt-10 p-2 laptop:p-0",
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+            className: "mt-5 laptop:mt-40 p-2 laptop:p-0",
+            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 children: [
-                    "Made With \u2764 by",
-                    " ",
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
-                        href: "http://www.chetanverma.com",
-                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                            className: "underline underline-offset-1",
-                            children: "Chetan Verma"
-                        })
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
+                        className: "text-2xl text-bold",
+                        children: "Contact."
+                    }),
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: "mt-10",
+                        children: [
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
+                                className: "text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold",
+                                children: "LET'S WORK"
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
+                                className: "text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold",
+                                children: "TOGETHER"
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Button__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+                                type: "button",
+                                onClick: ()=>window.open("https://calendly.com/lamduynhatle")
+                                ,
+                                children: " Schedule a call"
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                className: "mt-10",
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_Socials__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {})
+                            })
+                        ]
                     })
                 ]
             })
-        ]
+        })
     });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);

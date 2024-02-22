@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
@@ -53,7 +53,7 @@ export default function Home() {
       {data.showCursor && <Cursor />}
       <Head>
         <title>{data.name}</title>
-      </Head>
+      </Head> 
 
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
@@ -110,7 +110,7 @@ export default function Home() {
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 className="tablet:m-10 text-2xl text-bold">Services.</h1>
+          <h1 className="tablet:m-10 text-2xl text-bold">Skills.</h1>
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
               <ServiceCard
@@ -132,8 +132,14 @@ export default function Home() {
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
+            {data.aboutpara.split('|').map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
           </p>
+
         </div>
         <Footer />
       </div>

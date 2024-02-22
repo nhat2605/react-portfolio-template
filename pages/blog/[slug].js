@@ -28,6 +28,7 @@ const BlogPost = ({ post }) => {
         <title>{"Blog - " + post.title}</title>
         <meta name="description" content={post.preview} />
       </Head>
+
       {data.showCursor && <Cursor />}
 
       <div
