@@ -1,14 +1,6 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/api/blog/edit": "pages/api/blog/edit.js",
-  "/api/blog": "pages/api/blog.js",
-  "/api/portfolio": "pages/api/portfolio.js",
-  "/": "pages/index.html",
-  "/edit": "pages/edit.html",
-  "/resume": "pages/resume.html",
-  "/blog": "pages/blog.js",
-  "/blog/[slug]": "pages/blog/[slug].js",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/resume": "pages/resume.js"
 }
