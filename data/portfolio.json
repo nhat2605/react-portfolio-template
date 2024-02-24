@@ -33,14 +33,14 @@
   "projects": [
     {
       "id": "1",
-      "title": "Scenery Classification - Nebula 1.0",
+      "title": "Scenery Classification - Project Nebula 1.0",
       "description": "AI",
-      "imageSrc": "https://i.pinimg.com/564x/54/bf/57/54bf5773894ee04ed43bd5eb2a420ce7.jpg",
-      "url": "http://chetanverma.com/"
+      "imageSrc": "https://i.pinimg.com/originals/5a/6c/5d/5a6c5dc67164657189a6ba0a7f9ffbdb.jpg",
+      "url": "http://nhatcb.com/blog/firstblog"
     },
     {
       "id": "2",
-      "title": "Fake News Classification - Nebula 1.5",
+      "title": "Fake News Classification - Project Nebula 1.5",
       "description": "AI",
       "imageSrc": "https://i.pinimg.com/564x/15/5a/ee/155aee17772e517d46e9f6d50fa0b1ed.jpg",
       "url": "http://chetanverma.com/"
