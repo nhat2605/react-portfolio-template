@@ -52,8 +52,8 @@ export default function Home() {
     <div className={`relative ${data.showCursor && "cursor-none"}`}>
       {data.showCursor && <Cursor />}
       <Head>
-        <title>{data.name}</title>
-      </Head> 
+        <title>NhatCB</title>
+      </Head>
 
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
