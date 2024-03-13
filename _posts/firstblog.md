@@ -3,24 +3,21 @@ date: '2024-02-22T10:50:54.000Z'
 title: Scenery Classification - Nebula 1.0
 tagline: This is a Tagline If you want to add.
 preview: >-
-  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type and scrambled it to make a type
-  specimen book.
-image: 'https://i.pinimg.com/originals/5a/6c/5d/5a6c5dc67164657189a6ba0a7f9ffbdb.jpg'
+  I built a scenery classification model using a TensorFlow CNN with Keras. Powered by a dataset of 31,000 images, Nebula 1.0 can classify images as buildings, forests, glaciers, mountains, seas, or streets with 80% accuracy.
+image: 'https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?cs=srgb&dl=pexels-stephan-seeber-1054218.jpg&fm=jpg'
 ---
 
 # Heading One
 
-**Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+This project began as a way to test the speed of my new GPU for AI training compared to my MacBook. Initially a fun experiment, I quickly realized its potential and decided to take it further. After three months of development, I'm excited to share it with you!
 
-## This is Heading Two
+In this blog, I'll walk you through the model development process, share some key lessons learned, and provide a section where you can try it out.
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+# Heading Tưo
 
-### This is Heading Three
+To start, my first challenge was finding suitable images for training. I expanded my dataset from 14,000 to 31,000 images. However, obtaining clean data was difficult. Many images weren't purely representative of their category. For example, street images often included buildings, and vice versa. This initially caused some confusion for the model.
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+Next, I configured the model. This involved preparing the image data for the neural network, defining the network's architecture, and fitting the data to the model. Images were converted to RGB values and scaled from 0-255 to 0-1 for better network performance.
 
 #### This is Heading Four With Code Block
 

@@ -1,6 +1,6 @@
+import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Router, { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
 import { stagger } from "../../animations";
 import Button from "../../components/Button";
 import Cursor from "../../components/Cursor";
@@ -8,12 +8,44 @@ import Header from "../../components/Header";
 import data from "../../data/portfolio.json";
 import { ISOToDate, useIsomorphicLayoutEffect } from "../../utils";
 import { getAllPosts } from "../../utils/api";
+// Import the TailSpin loader
+import { TailSpin } from 'react-loader-spinner';
+
+const LoadingPopup = () => {
+  return (
+    <div className="loading-popup">
+      <div className="loading-content">
+        <TailSpin color="#00BFFF" height={80} width={80} />
+        <p>Loading...</p>
+      </div>
+      <style jsx>{`
+        .loading-popup {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 9999;
+        }
+        .loading-content {
+          text-align: center;
+          color: white;
+        }
+      `}</style>
+    </div>
+  );
+};
 
 const Blog = ({ posts }) => {
   const showBlog = useRef(data.showBlog);
   const text = useRef();
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useIsomorphicLayoutEffect(() => {
     stagger(
@@ -28,6 +60,11 @@ const Blog = ({ posts }) => {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const navigateToPost = (slug) => {
+    setIsLoading(true);
+    router.push(`/blog/${slug}`).then(() => setIsLoading(false));
+  };
 
   const createBlog = () => {
     if (process.env.NODE_ENV === "development") {
@@ -81,13 +118,14 @@ const Blog = ({ posts }) => {
             >
               Blog.
             </h1>
+            {isLoading && <LoadingPopup />}
             <div className="mt-10 grid grid-cols-1 mob:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 justify-between gap-10">
               {posts &&
                 posts.map((post) => (
                   <div
                     className="cursor-pointer relative"
                     key={post.slug}
-                    onClick={() => Router.push(`/blog/${post.slug}`)}
+                    onClick={() => navigateToPost(post.slug)}
                   >
                     <img
                       className="w-full h-60 rounded-lg shadow-lg object-cover"
@@ -131,7 +169,7 @@ const Blog = ({ posts }) => {
 
 export async function getStaticProps() {
   const posts = getAllPosts([
-    "slug",
+    "slug", 
     "title",
     "image",
     "preview",

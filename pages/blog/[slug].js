@@ -14,6 +14,7 @@ import data from "../../data/portfolio.json";
 
 const BlogPost = ({ post }) => {
   const [showEditor, setShowEditor] = useState(false);
+  const [inputValue, setInputValue] = useState(''); // State to hold the input field value
   const textOne = useRef();
   const textTwo = useRef();
   const router = useRouter();
@@ -31,35 +32,32 @@ const BlogPost = ({ post }) => {
 
       {data.showCursor && <Cursor />}
 
-      <div
-        className={`container mx-auto mt-10 ${
-          data.showCursor && "cursor-none"
-        }`}
-      >
+      <div className={`container mx-auto mt-10 ${data.showCursor && "cursor-none"}`}>
         <Header isBlog={true} />
         <div className="mt-10 flex flex-col">
-        <img
-          className="w-full h-96 rounded-lg shadow-lg object-cover"
-          src={post.image}
-          alt={post.title}
-        ></img>
-
-          <h1
-            ref={textOne}
-            className="mt-10 text-4xl mob:text-2xl laptop:text-6xl text-bold"
-          >
+          <img className="w-full h-96 rounded-lg shadow-lg object-cover" src={post.image} alt={post.title}></img>
+          <h1 ref={textOne} className="mt-10 text-4xl mob:text-2xl laptop:text-6xl text-bold">
             {post.title}
           </h1>
-          <h2
-            ref={textTwo}
-            className="mt-2 text-xl max-w-4xl text-darkgray opacity-50"
-          >
+          <h2 ref={textTwo} className="mt-2 text-xl max-w-4xl text-darkgray opacity-50">
             {post.tagline}
           </h2>
         </div>
         <ContentSection content={post.content}></ContentSection>
+        {post.slug === "firstblog" && (
+        <div className="markdown-class">
+          <input
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder="Enter your text here"
+            className="p-2 border rounded"
+          />
+        </div>
+      )}
         <Footer />
       </div>
+
       {process.env.NODE_ENV === "development" && (
         <div className="fixed bottom-6 right-6">
           <Button onClick={() => setShowEditor(true)} type={"primary"}>

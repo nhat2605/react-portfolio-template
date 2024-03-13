@@ -7,7 +7,7 @@ preview: >-
   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
   when an unknown printer took a galley of type and scrambled it to make a type
   specimen book.
-image: 'https://i.pinimg.com/564x/15/5a/ee/155aee17772e517d46e9f6d50fa0b1ed.jpg'
+image: 'https://i.pinimg.com/originals/11/b6/76/11b6769c8f2ea91b25fa0bb10bcaf4ab.jpg'
 ---
 
 # Heading One
