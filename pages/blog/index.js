@@ -8,41 +8,12 @@ import Header from "../../components/Header";
 import data from "../../data/portfolio.json";
 import { ISOToDate, useIsomorphicLayoutEffect } from "../../utils";
 import { getAllPosts } from "../../utils/api";
-// Import the TailSpin loader
-import { TailSpin } from 'react-loader-spinner';
-
-const LoadingPopup = () => {
-  return (
-    <div className="loading-popup">
-      <div className="loading-content">
-        <TailSpin color="#00BFFF" height={80} width={80} />
-        <p>Loading...</p>
-      </div>
-      <style jsx>{`
-        .loading-popup {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: rgba(0, 0, 0, 0.5);
-          z-index: 9999;
-        }
-        .loading-content {
-          text-align: center;
-          color: white;
-        }
-      `}</style>
-    </div>
-  );
-};
+import LoadingBar from 'react-top-loading-bar';
 
 const Blog = ({ posts }) => {
   const showBlog = useRef(data.showBlog);
   const text = useRef();
+  const loadingBarRef = useRef(null);
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -62,8 +33,14 @@ const Blog = ({ posts }) => {
   }, []);
 
   const navigateToPost = (slug) => {
-    setIsLoading(true);
-    router.push(`/blog/${slug}`).then(() => setIsLoading(false));
+    setIsLoading(true); 
+    loadingBarRef.current?.continuousStart();
+
+    router.push(`/blog/${slug}`)
+      .then(() => {
+        setIsLoading(false);
+        loadingBarRef.current?.complete();
+      });
   };
 
   const createBlog = () => {
@@ -101,6 +78,8 @@ const Blog = ({ posts }) => {
   return (
     showBlog.current && (
       <>
+      <LoadingBar color='#6666ff' ref={loadingBarRef} />
+        {data.showCursor && <Cursor />}
         {data.showCursor && <Cursor />}
         <Head>
           <title>Blog</title>
@@ -118,7 +97,7 @@ const Blog = ({ posts }) => {
             >
               Blog.
             </h1>
-            {isLoading && <LoadingPopup />}
+            {isLoading}
             <div className="mt-10 grid grid-cols-1 mob:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 justify-between gap-10">
               {posts &&
                 posts.map((post) => (
