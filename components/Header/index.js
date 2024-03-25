@@ -11,8 +11,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
   const { theme, setTheme } = useTheme();
   const { name, showBlog, showResume } = data;
 
-  if (theme == "system")
-    setTheme("light")
+  setTheme("light")
 
   return (
     <>
