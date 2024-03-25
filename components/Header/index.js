@@ -2,13 +2,17 @@ import { Popover } from "@headlessui/react";
 import { useRouter } from "next/router";
 import React from "react";
 import Button from "../Button";
+import { useTheme } from "next-themes";
 // Local Data
 import data from "../../data/portfolio.json";
 
 const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
   const router = useRouter();
-
+  const { theme, setTheme } = useTheme();
   const { name, showBlog, showResume } = data;
+
+  if (theme == "system")
+    setTheme("light")
 
   return (
     <>
