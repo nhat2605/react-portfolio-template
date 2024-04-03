@@ -45,16 +45,16 @@ const BlogPost = ({ post }) => {
         </div>
         <ContentSection content={post.content}></ContentSection>
         {post.slug === "firstblog" && (
-        <div className="markdown-class">
-          <input
-            type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            placeholder="Enter your text here"
-            className="p-2 border rounded"
-          />
-        </div>
-      )}
+          <div className="markdown-class">
+            <input
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="Enter your text here"
+              className="p-2 border rounded"
+            />
+          </div>
+        )}
         <Footer />
       </div>
 

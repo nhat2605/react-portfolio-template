@@ -33,7 +33,7 @@ const Blog = ({ posts }) => {
   }, []);
 
   const navigateToPost = (slug) => {
-    setIsLoading(true); 
+    setIsLoading(true);
     loadingBarRef.current?.continuousStart();
 
     router.push(`/blog/${slug}`)
@@ -78,17 +78,18 @@ const Blog = ({ posts }) => {
   return (
     showBlog.current && (
       <>
-      <LoadingBar color='#6666ff' ref={loadingBarRef} />
+        <LoadingBar color='#6666ff' ref={loadingBarRef} />
         {data.showCursor && <Cursor />}
         {data.showCursor && <Cursor />}
         <Head>
           <title>Blog</title>
         </Head>
         <div
-          className={`container mx-auto mb-10 ${
-            data.showCursor && "cursor-none"
-          }`}
+          className={`container mx-auto mb-10 ${data.showCursor && "cursor-none"
+            }`}
         >
+          <div className="gradient-circle"></div>
+          <div className="filler"></div>
           <Header isBlog={true}></Header>
           <div className="mt-10">
             <h1
@@ -148,7 +149,7 @@ const Blog = ({ posts }) => {
 
 export async function getStaticProps() {
   const posts = getAllPosts([
-    "slug", 
+    "slug",
     "title",
     "image",
     "preview",
