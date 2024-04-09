@@ -1,10 +1,12 @@
 import { Popover } from "@headlessui/react";
+import Image from 'next/image'
 import { useRouter } from "next/router";
 import React from "react";
 import Button from "../Button";
 import { useTheme } from "next-themes";
 // Local Data
 import data from "../../data/portfolio.json";
+import Logo from '../../public/images/logo.svg';
 
 const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
   const router = useRouter();
@@ -94,12 +96,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       <div
         className="mt-10 hidden flex-row items-center justify-between sticky bg-white top-0 z-10 tablet:flex"
       >
-        <h1
-          onClick={() => router.push("/")}
-          className="font-medium cursor-pointer mob:p-2 laptop:p-0"
-        >
-          NhatCodeBase
-        </h1>
+
+        <div onClick={() => router.push("/")} className="cursor-pointer mob:p-2 laptop:p-0">
+          <Image src="/images/nhatcodebase.svg" alt="NhatCodeBase" width={150} height={50} />
+        </div>
+
         {!isBlog ? (
           <div className="flex">
             <Button onClick={handleAboutScroll}>About</Button>
