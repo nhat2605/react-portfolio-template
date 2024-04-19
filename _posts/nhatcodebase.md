@@ -7,7 +7,7 @@ preview: >-
   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
   when an unknown printer took a galley of type and scrambled it to make a type
   specimen book.
-image: 'https://i.pinimg.com/originals/11/b6/76/11b6769c8f2ea91b25fa0bb10bcaf4ab.jpg'
+image: 'https://i.pinimg.com/originals/4d/c3/91/4dc39102bd9c690b74c1667bb9d43503.jpg'
 ---
 
 # Heading One
@@ -26,7 +26,7 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 
 ```
 
-# Auto-generated based on the server's hostname.
+# Auto-generated based on the server's hostname.  
 # Set this to the URL used to access the Firezone Web UI.
 default['firezone']['external_url'] = 'https://firezone.example.com'
 
