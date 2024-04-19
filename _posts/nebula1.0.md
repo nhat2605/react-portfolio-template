@@ -77,7 +77,8 @@ model = Sequential([
 ])
 ```
 
-This is what you call a Neural Network. To give you a quick rundown, a neural network is a model inspired by the biological neural networks in a human brain. Here is a quote on wiki that I think excellently explains how it works:
+## Neural Network
+At this part, you must be wondering what the heck did you just read. This is what you call a Neural Network. To give you a quick rundown, a neural network is a model inspired by the biological neural networks in a human brain. Here is a quote on wiki that I think excellently explains how it works:
 > An Artificial Neural Network (ANN) is made of connected units or nodes called artificial neurons, which loosely model the neurons in a brain. These are connected by edges, which model the synapses in a brain. An artificial neuron receives signals from connected neurons, then processes them and sends a signal to other connected neurons.
 
 Now that you have the definition, let’s have a look at the structure of how our neural network might look like:

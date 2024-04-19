@@ -6,7 +6,6 @@ import Button from "../Button";
 import { useTheme } from "next-themes";
 // Local Data
 import data from "../../data/portfolio.json";
-import Logo from '../../public/images/logo.svg';
 
 const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
   const router = useRouter();
