@@ -1,17 +1,16 @@
 import React, { useEffect, useState, useRef } from "react";
-import Header from "../components/Header/"
+import Header from "../components/Header/";
 import Head from "next/head";
+import Image from 'next/image'
 import axios from 'axios';
+import logo from '../public/images/logo.svg'; // Ensure this import matches your SVG file path
 
 const Playground = () => {
-  let imageLink = []
+  const [imageLink, setImageLink] = useState('');
   const [message, setMessage] = useState('');
   const [isShaking, setIsShaking] = useState(false);
   const textareaRef = useRef(null);
 
-  useEffect(() => {
-    console.log(isShaking);
-  }, [isShaking]);
   useEffect(() => {
     function resizeTextarea() {
       if (textareaRef.current) {
@@ -33,11 +32,19 @@ const Playground = () => {
   };
 
   const handleEnter = async () => {
+    setMessage('');
     try {
       const response = await axios.head(message);
       const contentType = response.headers['content-type'];
       if (contentType && contentType.startsWith('image/')) {
+        setImageLink(message)
         console.log('Valid image URL');
+
+        const classifyResult = await axios.post('https://lamduynhatle.pythonanywhere.com/classify/', {
+          image_url: message,
+        });
+
+        console.log(classifyResult.data.results);
         setIsShaking(false);
       } else {
         console.log('Invalid image URL');
@@ -49,6 +56,7 @@ const Playground = () => {
     } finally {
       // Remove the shake effect after a delay
       setTimeout(() => setIsShaking(false), 500);
+      // Clear the textarea value
     }
   };
 
@@ -80,7 +88,17 @@ const Playground = () => {
             width: '50%',
             textAlign: 'left'
           }}>
-          <p> </p>
+          {/* Empty div for flexibility if needed */}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '100px' }}>
+          {imageLink === "" ? (
+            <>
+              <Image src={logo} alt="Logo" width={100} height={100} />
+              <p>Hello, I am Nebula version 1.0</p>
+              <p>I can help you guess if an image is of a <b>mountain, sea, glacier, forest, building or street.</b></p>
+              <p>Please give me the URL to the image</p>
+            </>
+          ) : null}
         </div>
 
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-transparent dark:bg-gray-800 flex justify-center items-end">
