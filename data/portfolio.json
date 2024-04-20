@@ -31,28 +31,21 @@
     }
   ],
   "projects": [
-    
     {
       "id": "1",
-      "title": "Welcome to nhatcodebase",
-      "description": "Web Development",
-      "imageSrc": "https://i.pinimg.com/originals/4d/c3/91/4dc39102bd9c690b74c1667bb9d43503.jpg",
-      "url": "https://nhatcb.com/blog/secondblog/"
-    },
-    {
-      "id": "2",
       "title": "Scenery Classification - Project Nebula 1.0",
       "description": "AI",
       "imageSrc": "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?cs=srgb&dl=pexels-stephan-seeber-1054218.jpg&fm=jpg",
       "url": "https://nhatcb.com/blog/firstblog/"
     },
     {
-      "id": "3",
-      "title": "Fake News Classification - Project Nebula 1.5",
-      "description": "AI",
-      "imageSrc": "https://i.pinimg.com/originals/11/b6/76/11b6769c8f2ea91b25fa0bb10bcaf4ab.jpg",
+      "id": "2",
+      "title": "Welcome to nhatcodebase",
+      "description": "Web Development",
+      "imageSrc": "https://i.pinimg.com/originals/4d/c3/91/4dc39102bd9c690b74c1667bb9d43503.jpg",
       "url": "https://nhatcb.com/blog/secondblog/"
     }
+    
   ],
   "services": [
     {

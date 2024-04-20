@@ -1,7 +1,9 @@
-/** @type {import('next').NextConfig} */
+// next.config.js
 const nextConfig = {
-  output: 'export',
   reactStrictMode: true,
+  images: {
+    domains: ['i.pinimg.com'],
+  },
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
