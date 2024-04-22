@@ -8,10 +8,11 @@ const ExampleCard = ({ url, handleClick }) => {
     >
       <img
         className="object-cover rounded-lg transition-all ease-out duration-300"
-        style={{ maxHeight: '200px', width: 'auto', height: 'auto' }}
+        style={{ maxHeight: '20vh', width: 'auto', height: 'auto' }}
         src={url}
         alt="Descriptive text"
       />
+
     </div>
   );
 };

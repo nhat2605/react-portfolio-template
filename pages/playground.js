@@ -28,8 +28,8 @@ const Playground = () => {
 
   useEffect(() => {
     async function getLoader() {
-      const { hatch } = await import('ldrs')
-      hatch.register()
+      const { miyagi } = await import('ldrs')
+      miyagi.register()
     }
     getLoader()
   }, [])
@@ -134,12 +134,12 @@ const Playground = () => {
                 alt="Descriptive text"
               />
               <div style={{ marginTop: '90px' }}>
-                {!result && <l-hatch
+                {!result && <l-miyagi
                   size="150"
                   stroke="4"
-                  speed="3.5"
+                  speed="0.9"
                   color="purple" 
-                ></l-hatch>}
+                ></l-miyagi>}
               
               </div>
               <div className="grid grid-cols-2 gap-4 w-1/2"> {/* Adjust the width as needed */}
