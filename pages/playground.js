@@ -7,21 +7,34 @@ import axios from 'axios';
 import logo from '../public/images/logo.svg';
 import toast, { Toaster } from "react-hot-toast";
 
+
 const Playground = () => {
   const [imageLink, setImageLink] = useState('');
   const [message, setMessage] = useState('');
+  const [result, setResult] = useState(null);
   const [isShaking, setIsShaking] = useState(false);
   const textareaRef = useRef(null);
 
-  useEffect(() => {
-    const resizeTextarea = () => {
-      if (textareaRef.current) {
-        textareaRef.current.style.height = 'auto';
-        textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
-      }
-    };
+  const resizeTextarea = () => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  };
 
-    resizeTextarea(); // Resize on mount
+  useEffect(() => {
+    resizeTextarea(); // Resize on mount and on message change
+  }, [message]); // Dependency on message state
+
+  useEffect(() => {
+    async function getLoader() {
+      const { hatch } = await import('ldrs')
+      hatch.register()
+    }
+    getLoader()
+  }, [])
+
+  useEffect(() => {
     window.addEventListener('resize', resizeTextarea);
     return () => {
       window.removeEventListener('resize', resizeTextarea);
@@ -33,7 +46,6 @@ const Playground = () => {
   };
 
   const handleEnter = async () => {
-    
     try {
       const response = await axios.head(message);
       setMessage('');
@@ -45,6 +57,7 @@ const Playground = () => {
           image_url: message,
         });
         console.log(classifyResult.data.results);
+        setResult(classifyResult.data.results)
         setIsShaking(false);
       } else {
         console.log('Invalid image URL');
@@ -101,7 +114,7 @@ const Playground = () => {
           }}>
           {/* Empty div for flexibility if needed */}
         </div>
-        <div className={`fixed left-0 right-0  justify-center`} style={{ textAlign: 'center', marginTop: '100px' }}>
+        <div className={`fixed left-0 right-0  justify-center`} style={{ textAlign: 'center', marginTop: '00px' }}>
           {imageLink === "" ? (
             <>
               <Image src={logo} alt="Logo" width={100} height={100} />
@@ -120,17 +133,23 @@ const Playground = () => {
                 src={imageLink}
                 alt="Descriptive text"
               />
+              <div style={{ marginTop: '90px' }}>
+                {!result && <l-hatch
+                  size="150"
+                  stroke="4"
+                  speed="3.5"
+                  color="purple" 
+                ></l-hatch>}
+              
+              </div>
               <div className="grid grid-cols-2 gap-4 w-1/2"> {/* Adjust the width as needed */}
-                <p>Hello Here is the graph</p>
-                <p>Here is the description</p>
+                
               </div>
             </>
           ) : null}
         </div>
 
-
-        
-        {imageLink === "" ? (<div className="fixed bottom-0 left-0 right-0 flex justify-center items-center" style={{ marginBottom: '90px' }}>
+        {imageLink === "" ? (<div className="fixed left-0 right-0 flex justify-center items-center" style={{ marginTop: '100px' }}>
           <div className="grid grid-cols-2 gap-7 m-4" style={{ maxWidth: '1200px' }}>  
             <div className="flex justify-end">
               <ExampleCard url="https://cdn.mos.cms.futurecdn.net/xaycNDmeyxpHDrPqU6LmaD.jpg" handleClick={handleClick}/>
@@ -140,12 +159,12 @@ const Playground = () => {
             <div className="flex justify-end">
               <ExampleCard url="https://thedailyaus.com.au/wp-content/uploads/2023/10/Website-Featured-Images-NEW-73.png" handleClick={handleClick}/>
             </div>
-            <ExampleCard url="https://lh3.googleusercontent.com/proxy/8SGaYSXNB_CJA54ecMtbYJhJ1BtxGQzCI_O0D7XuR95xHHMK45Cu8bUuM6wM6qi6YIL16NRvwnDVUWdRhAGuOvvveywXpPNSOd3384Y5ifMvXo_ap5NztmDgxJrk-KaQ1oWjq8PZxueFtTjHs1obUw" handleClick={handleClick}/>
+            <ExampleCard url="https://thedailyaus.com.au/wp-content/uploads/2023/08/Website-Featured-Images-NEW-3-1.png" handleClick={handleClick}/>
           </div>
         </div>) : null}
         
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-transparent dark:bg-gray-800 flex justify-center items-end">
-          <div className={`w-1/2 relative ${isShaking ? 'shake-animation' : ''}`}>
+          <div className={`w-3/4 relative ${isShaking ? 'shake-animation' : ''}`}>
             <div className="relative flex w-full">
               <textarea
                 ref={textareaRef}
