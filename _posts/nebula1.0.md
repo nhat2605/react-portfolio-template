@@ -78,13 +78,13 @@ model = Sequential([
 ```
 
 ## Neural Network
-At this part, you must be wondering what the heck did you just read. This is what you call a Neural Network. To give you a quick rundown, a neural network is a model inspired by the biological neural networks in a human brain. Here is a quote on wiki that I think excellently explains how it works:
+At this part, you must be wondering what did you just read. We will come back to the code later, for now, lets focus on the basics. This is what you call a Neural Network. To give you a quick rundown, a neural network is a model inspired by the biological neural networks in a human brain. Here is a quote on wiki that I think excellently explains how it works:
 > An Artificial Neural Network (ANN) is made of connected units or nodes called artificial neurons, which loosely model the neurons in a brain. These are connected by edges, which model the synapses in a brain. An artificial neuron receives signals from connected neurons, then processes them and sends a signal to other connected neurons.
 
 Now that you have the definition, let’s have a look at the structure of how our neural network might look like:
 ![Deep Neural Network](https://cf-assets.www.cloudflare.com/slt3lc6tev37/1wkNx98skWwkKAw2XExpQe/33505b0b82e3156fc042bca42a1a2034/neural-network-diagram.png)
 
-To simply explain this, let's go back to our normal senses. Do you ever wonder why when you look at something like a cat, you know that it is a cat and not a dog instantly? Well, that's because your brain has been trained over time to recognize shapes, sizes, and patterns that distinguish cats from dogs. Now, imagine if we could teach a computer to do the same thing, but instead of using cookies and milk as rewards, we use data and algorithms. That's essentially what a neural network does.
+Do you ever wonder why when you look at something like a cat, you know that it is a cat and not a dog instantly? Well, that's because your brain has been trained over time to recognize shapes, sizes, and patterns that distinguish cats from dogs. 
 
 Just like how you learned to tell cats and dogs apart, a neural network learns by being shown thousands, if not millions, of pictures of cats and dogs. Each time it guesses correctly, it gets a little 'digital pat on the back' (aka, it adjusts its internal settings to remember what the right answer looks like). And when it’s wrong? Well, it does the digital equivalent of going back to the drawing board to figure out why that fluffy creature with the mischievous smile was not a small, barky dog but indeed a cat.
 

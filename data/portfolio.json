@@ -27,7 +27,7 @@
     {
       "id": "4",
       "title": "Email",
-      "link": "mailto:lamduynhatle@gmail.com"
+      "link": "mailto:admin@nhatcb.com"
     }
   ],
   "projects": [
@@ -36,14 +36,14 @@
       "title": "Scenery Classification - Project Nebula 1.0",
       "description": "AI",
       "imageSrc": "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?cs=srgb&dl=pexels-stephan-seeber-1054218.jpg&fm=jpg",
-      "url": "https://nhatcb.com/blog/firstblog/"
+      "url": "https://nhatcb.com/blog/nebula1.0"
     },
     {
       "id": "2",
       "title": "Welcome to nhatcodebase",
       "description": "Web Development",
       "imageSrc": "https://i.pinimg.com/originals/4d/c3/91/4dc39102bd9c690b74c1667bb9d43503.jpg",
-      "url": "https://nhatcb.com/blog/secondblog/"
+      "url": "https://nhatcb.com/blog/nhatcodebase"
     }
     
   ],

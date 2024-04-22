@@ -6,6 +6,7 @@ import Image from 'next/image';
 import axios from 'axios';
 import logo from '../public/images/logo.svg';
 import toast, { Toaster } from "react-hot-toast";
+import ResultChart from "../components/ResultChart";
 
 
 const Playground = () => {
@@ -93,6 +94,11 @@ const Playground = () => {
     }
   };
 
+  let highestCategory = "";
+  if (result) {
+    highestCategory = Object.keys(result).reduce((a, b) => result[a] > result[b] ? a : b);
+  }
+
   return (
     <>
     <Toaster />
@@ -121,7 +127,7 @@ const Playground = () => {
             <>
               <Image src={logo} alt="Logo" width={100} height={100} />
               <p>Hello, I am Nebula version 1.0</p>
-              <p>I can help you guess if an image is of a <b>mountain, sea, glacier, forest, building or street.</b></p>
+              <p>I can help you guess if an image is of a <b>mountain, beach, glacier, forest, building or street.</b></p>
               <p>Please give me the URL to the image</p>
             </>
           ) : null}
@@ -156,8 +162,11 @@ const Playground = () => {
                   </div>
                 )}
               </div>
-              <div className="grid grid-cols-2 gap-4 w-1/2"> {/* Adjust the width as needed */}
-                
+              <div className="grid grid-cols-2 gap-4 w-1/2 items-center"> {/* Adjust the width as needed */}
+                {result && <ResultChart result={result} />}
+                {result && (
+                  <p>The image is likely of a {highestCategory.toLowerCase()}.</p>
+                )}
               </div>
             </>
           ) : null}
