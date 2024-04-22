@@ -172,7 +172,7 @@ const Playground = () => {
           ) : null}
         </div>
 
-        {imageLink === "" ? (<div className="fixed left-0 right-0 flex justify-center items-center" style={{ marginTop: '120px' }}>
+        {imageLink === "" ? (<div className="fixed left-0 right-0 flex justify-center items-center" style={{ marginTop: '150px' }}>
           <div className="grid grid-cols-2 gap-7 m-4" style={{ maxWidth: '1200px' }}>  
             <div className="flex justify-end">
               <ExampleCard url="https://cdn.mos.cms.futurecdn.net/xaycNDmeyxpHDrPqU6LmaD.jpg" handleClick={handleClick}/>

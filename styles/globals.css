@@ -93,14 +93,14 @@ body {
     }
 
     25% {
-        transform: translateX(-5px);
+        transform: translateX(-40px);
     }
 
     75% {
-        transform: translateX(5px);
+        transform: translateX(40px);
     }
 }
 
 .shake-animation {
-    animation: shake 0.5s linear;
+    animation: shake 0.25s linear;
 }
