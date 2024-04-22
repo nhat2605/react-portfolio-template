@@ -133,7 +133,7 @@ const Playground = () => {
                 src={imageLink}
                 alt="Descriptive text"
               />
-              <div style={{ marginTop: '90px' }}>
+              <div style={{ marginTop: '40px' }}>
                 {!result && <l-miyagi
                   size="150"
                   stroke="4"
