@@ -28,8 +28,8 @@ const Playground = () => {
 
   useEffect(() => {
     async function getLoader() {
-      const { miyagi } = await import('ldrs')
-      miyagi.register()
+      const { quantum } = await import('ldrs')
+      quantum.register()
     }
     getLoader()
   }, [])
@@ -49,6 +49,7 @@ const Playground = () => {
     try {
       const response = await axios.head(message);
       setMessage('');
+      setResult(null);
       const contentType = response.headers['content-type'];
       if (contentType && contentType.startsWith('image/')) {
         setImageLink(message);
@@ -88,6 +89,7 @@ const Playground = () => {
     if (e.keyCode === 13 && !e.shiftKey) {
       e.preventDefault();
       handleEnter();
+      
     }
   };
 
@@ -114,7 +116,7 @@ const Playground = () => {
           }}>
           {/* Empty div for flexibility if needed */}
         </div>
-        <div className={`fixed left-0 right-0  justify-center`} style={{ textAlign: 'center', marginTop: '00px' }}>
+        <div className={`fixed left-0 right-0  justify-center`} style={{ textAlign: 'center' }}>
           {imageLink === "" ? (
             <>
               <Image src={logo} alt="Logo" width={100} height={100} />
@@ -125,22 +127,34 @@ const Playground = () => {
           ) : null}
         </div>
 
-        <div className="flex flex-col items-center justify-center " style={{ marginTop: '90px' }}>
+        <div className="flex flex-col items-center justify-center " style={{ marginTop: '50px' }}>
           {imageLink !== "" ? (
             <>
-              <img
-                style={{ maxWidth: '50%', width: 'auto', height: 'auto' }}
-                src={imageLink}
-                alt="Descriptive text"
-              />
-              <div style={{ marginTop: '40px' }}>
-                {!result && <l-miyagi
-                  size="150"
-                  stroke="4"
-                  speed="0.9"
-                  color="purple" 
-                ></l-miyagi>}
-              
+              <div style={{ position: 'relative', maxWidth: '50%' }}>
+                <img
+                  style={{ width: '100%', height: 'auto' }}
+                  src={imageLink}
+                  alt="Descriptive text"
+                />
+                {result === null && (
+                  <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Dark filter with 50% opacity
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <l-quantum
+                      size="100"
+                      speed="2.2"
+                      color="white"
+                    ></l-quantum>
+                  </div>
+                )}
               </div>
               <div className="grid grid-cols-2 gap-4 w-1/2"> {/* Adjust the width as needed */}
                 
@@ -149,7 +163,7 @@ const Playground = () => {
           ) : null}
         </div>
 
-        {imageLink === "" ? (<div className="fixed left-0 right-0 flex justify-center items-center" style={{ marginTop: '100px' }}>
+        {imageLink === "" ? (<div className="fixed left-0 right-0 flex justify-center items-center" style={{ marginTop: '120px' }}>
           <div className="grid grid-cols-2 gap-7 m-4" style={{ maxWidth: '1200px' }}>  
             <div className="flex justify-end">
               <ExampleCard url="https://cdn.mos.cms.futurecdn.net/xaycNDmeyxpHDrPqU6LmaD.jpg" handleClick={handleClick}/>
