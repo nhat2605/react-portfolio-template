@@ -182,10 +182,10 @@ const Playground = () => {
             <div>
               <ExampleCard url="https://miro.medium.com/v2/resize:fit:2000/1*0drOXMZVz0cx8jlXW2SxTg.jpeg" handleClick={handleClick}/>  
             </div>
-            <div className="lg-hidden justify-end">
+            <div className="hidden md:flex justify-end">
               <ExampleCard url="https://thedailyaus.com.au/wp-content/uploads/2023/10/Website-Featured-Images-NEW-73.png" handleClick={handleClick}/>
             </div>
-            <div className="lg-hidden"> 
+            <div className="hidden md:flex"> 
               <ExampleCard url="https://thedailyaus.com.au/wp-content/uploads/2023/08/Website-Featured-Images-NEW-3-1.png" handleClick={handleClick}/>
             </div>
           </div>
