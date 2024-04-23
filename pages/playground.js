@@ -136,9 +136,9 @@ const Playground = () => {
         <div className="flex flex-col items-center justify-center " style={{ marginTop: '50px' }}>
           {imageLink !== "" ? (
             <>
-              <div style={{ position: 'relative', maxWidth: '50%', maxHeigh: '50%' }}>
+              <div style={{ position: 'relative', minWidth:"30%", maxWidth: '50%' }}>
                 <img
-                  style={{ width: '100%', height: 'auto' }}
+                  style={{ width: 'auto', height: 'auto' }}
                   src={imageLink}
                   alt="Descriptive text"
                 />
@@ -162,19 +162,25 @@ const Playground = () => {
                   </div>
                 )}
               </div>
-              <div className="grid grid-cols-2 gap-4 w-full md:w-3/4 lg:w-1/2 items-center justify-center"> {/* Width adjusts based on screen size */}
-                {result && <ResultChart result={result} />}
-                {result && (
-                  <p>The image is likely of a {highestCategory.toLowerCase()}.</p>
-                )}
+              <div className="w-full md:w-3/4 lg:w-1/2">
+                <div className="grid grid-cols-1 gap-4 items-center justify-center">
+                  {result && (
+                    <div>
+                    <ResultChart result={result} /> 
+                    <p className="text-center">The image is likely of a {highestCategory.toLowerCase()}.</p>
+                    </div>
+                  )}
+                </div>
               </div>
+
+
 
             </>
           ) : null}
         </div>
 
         {imageLink === "" ? (
-        <div className="hidden tablet:flex left-0 right-0  justify-center items-center" style={{ marginTop: '150px' }}>
+        <div className="hidden mob:flex left-0 right-0 justify-center items-center" style={{ marginTop: '170px' }}>
           <div className="grid grid-cols-2 gap-7 m-4" style={{ maxWidth: '1200px' }}>  
             <div className="flex justify-end">
               <ExampleCard url="https://cdn.mos.cms.futurecdn.net/xaycNDmeyxpHDrPqU6LmaD.jpg" handleClick={handleClick}/>
@@ -182,10 +188,10 @@ const Playground = () => {
             <div>
               <ExampleCard url="https://miro.medium.com/v2/resize:fit:2000/1*0drOXMZVz0cx8jlXW2SxTg.jpeg" handleClick={handleClick}/>  
             </div>
-            <div className="hidden laptop:block justify-end">
+            <div className="hidden desktop:block justify-end">
               <ExampleCard url="https://thedailyaus.com.au/wp-content/uploads/2023/10/Website-Featured-Images-NEW-73.png" handleClick={handleClick}/>
             </div>
-            <div className="hidden laptop:block"> 
+            <div className="hidden desktop:block"> 
               <ExampleCard url="https://thedailyaus.com.au/wp-content/uploads/2023/08/Website-Featured-Images-NEW-3-1.png" handleClick={handleClick}/>
             </div>
           </div>

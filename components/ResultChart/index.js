@@ -24,8 +24,8 @@ const ResultChart = ({ result }) => {
   const COLORS = ['#051821', '#1A4645', '#266867', '#6B6BF8', '#F58800', '#F6BC24'];  // Fixed color code
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%', height: '100%' }}>
-      <ResponsiveContainer width="50%" height={400}> {/* Adjust the width as needed */}
+    <div className='hidden laptopl:flex' style={{justifyContent: 'center', width: '100%', height: '100%' }}>
+      <ResponsiveContainer width="50%" height={400}>
         <PieChart>
           <Pie
             data={data}
