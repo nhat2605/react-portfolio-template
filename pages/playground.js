@@ -174,7 +174,7 @@ const Playground = () => {
         </div>
 
         {imageLink === "" ? (
-        <div className="fixed left-0 right-0 flex justify-center items-center" style={{ marginTop: '150px' }}>
+        <div className="hidden tablet:flex left-0 right-0  justify-center items-center" style={{ marginTop: '150px' }}>
           <div className="grid grid-cols-2 gap-7 m-4" style={{ maxWidth: '1200px' }}>  
             <div className="flex justify-end">
               <ExampleCard url="https://cdn.mos.cms.futurecdn.net/xaycNDmeyxpHDrPqU6LmaD.jpg" handleClick={handleClick}/>
@@ -182,10 +182,10 @@ const Playground = () => {
             <div>
               <ExampleCard url="https://miro.medium.com/v2/resize:fit:2000/1*0drOXMZVz0cx8jlXW2SxTg.jpeg" handleClick={handleClick}/>  
             </div>
-            <div className="hidden md:flex justify-end">
+            <div className="hidden laptop:block justify-end">
               <ExampleCard url="https://thedailyaus.com.au/wp-content/uploads/2023/10/Website-Featured-Images-NEW-73.png" handleClick={handleClick}/>
             </div>
-            <div className="hidden md:flex"> 
+            <div className="hidden laptop:block"> 
               <ExampleCard url="https://thedailyaus.com.au/wp-content/uploads/2023/08/Website-Featured-Images-NEW-3-1.png" handleClick={handleClick}/>
             </div>
           </div>
