@@ -136,7 +136,7 @@ const Playground = () => {
         <div className="flex flex-col items-center justify-center " style={{ marginTop: '50px' }}>
           {imageLink !== "" ? (
             <>
-              <div style={{ position: 'relative', maxWidth: '50%' }}>
+              <div style={{ position: 'relative', maxWidth: '50%', maxHeigh: '50%' }}>
                 <img
                   style={{ width: '100%', height: 'auto' }}
                   src={imageLink}
@@ -162,29 +162,36 @@ const Playground = () => {
                   </div>
                 )}
               </div>
-              <div className="grid grid-cols-2 gap-4 w-1/2 items-center"> {/* Adjust the width as needed */}
+              <div className="grid grid-cols-2 gap-4 w-full md:w-3/4 lg:w-1/2 items-center justify-center"> {/* Width adjusts based on screen size */}
                 {result && <ResultChart result={result} />}
                 {result && (
                   <p>The image is likely of a {highestCategory.toLowerCase()}.</p>
                 )}
               </div>
+
             </>
           ) : null}
         </div>
 
-        {imageLink === "" ? (<div className="fixed left-0 right-0 flex justify-center items-center" style={{ marginTop: '150px' }}>
+        {imageLink === "" ? (
+        <div className="fixed left-0 right-0 flex justify-center items-center" style={{ marginTop: '150px' }}>
           <div className="grid grid-cols-2 gap-7 m-4" style={{ maxWidth: '1200px' }}>  
             <div className="flex justify-end">
               <ExampleCard url="https://cdn.mos.cms.futurecdn.net/xaycNDmeyxpHDrPqU6LmaD.jpg" handleClick={handleClick}/>
             </div>
-            <ExampleCard url="https://miro.medium.com/v2/resize:fit:2000/1*0drOXMZVz0cx8jlXW2SxTg.jpeg" handleClick={handleClick}/>
-
-            <div className="flex justify-end">
+            <div>
+              <ExampleCard url="https://miro.medium.com/v2/resize:fit:2000/1*0drOXMZVz0cx8jlXW2SxTg.jpeg" handleClick={handleClick}/>  
+            </div>
+            <div className="lg-hidden justify-end">
               <ExampleCard url="https://thedailyaus.com.au/wp-content/uploads/2023/10/Website-Featured-Images-NEW-73.png" handleClick={handleClick}/>
             </div>
-            <ExampleCard url="https://thedailyaus.com.au/wp-content/uploads/2023/08/Website-Featured-Images-NEW-3-1.png" handleClick={handleClick}/>
+            <div className="lg-hidden"> 
+              <ExampleCard url="https://thedailyaus.com.au/wp-content/uploads/2023/08/Website-Featured-Images-NEW-3-1.png" handleClick={handleClick}/>
+            </div>
           </div>
-        </div>) : null}
+        </div>
+      ) : null}
+
         
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-transparent dark:bg-gray-800 flex justify-center items-end">
           <div className={`w-3/4 relative ${isShaking ? 'shake-animation' : ''}`}>
