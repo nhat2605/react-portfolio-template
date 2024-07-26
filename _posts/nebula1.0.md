@@ -11,7 +11,7 @@ You can find the project here at [Github](https://github.com/nhat2605/scenary_cl
 
 # Motivation
 
-This project started as an experiment to see how fast my new Graphics Card could handle AI training compared to my MacBook. What began as just a bit of fun soon showed promise, and I decided to push the boundaries. Three months later, I'm thrilled to present my findings!
+This project started as an experiment to see how fast my new Graphics Card could handle AI training compared to my MacBook (A RTX 4070TI). What began as just a bit of fun soon showed promise, and I decided to push the boundaries. Three months later, I'm thrilled to present my findings!
 
 In this blog post, I'll guide you through the journey of developing the model and share some crucial insights gained along the way.
 
@@ -61,8 +61,8 @@ with strategy.scope():
 
         # Classifier
         layers.Flatten(),
-        layers.Dense(128, activation='relu'), 
-        layers.Dense(num_classes, activation='softmax', name="outputs") 
+        layers.Dense(128, activation='relu'),
+        layers.Dense(num_classes, activation='softmax', name="outputs")
     ])
 ```
 
@@ -92,7 +92,7 @@ At this point, you must be wondering what did you just read. We will come back t
 Now that we got the definition out of the way, let’s have a look at the structure of how our neural network might look like:
 ![Deep Neural Network](https://cf-assets.www.cloudflare.com/slt3lc6tev37/1wkNx98skWwkKAw2XExpQe/33505b0b82e3156fc042bca42a1a2034/neural-network-diagram.png)
 
-Do you ever wonder why when you look at something like a cat, you know that it is a cat and not a dog instantly? Well, that's because your brain has been trained over time to recognize shapes, sizes, and patterns that distinguish cats from dogs. 
+Do you ever wonder why when you look at something like a cat, you know that it is a cat and not a dog instantly? Well, that's because your brain has been trained over time to recognise shapes, sizes, and patterns that distinguish cats from dogs.
 
 Just like how you learned to tell cats and dogs apart, a neural network learns by being shown thousands, if not millions, of pictures of cats and dogs. Each time it guesses correctly, it gets a little 'digital pat on the back' (aka, it adjusts its internal settings to remember what the right answer looks like). And when it’s wrong? Well, it does the digital equivalent of going back to the drawing board to figure out why that fluffy creature with the mischievous smile was not a small, barky dog but indeed a cat.
 
@@ -107,7 +107,7 @@ Through this dynamic of rewards and punishment, the neural network's hidden laye
 ## Changes
 Back to the adjustments I've made to the architecture of the neural network. If it seemed complex, don't fret—I'll be demystifying everything for you.
 
-### TensorFlow setup 
+### TensorFlow setup
 
 The model commences with a process known as data_augmentation. This entails presenting the neural network with a range of images captured under varying lighting conditions, angles, or slightly altered appearances. Such diversification aids the network in developing proficiency in recognising objects, regardless of how they are depicted.
 ![Image Alteration](https://i.pinimg.com/originals/ad/80/d0/ad80d0768d862b807c6cdd3800dc8aa7.webp)
@@ -135,19 +135,17 @@ The final part of the model, which I call the Classifier, begins with `layers.Fl
 
 # Result
 
-In machine learning, we celebrate the milestones of a neural network's education through its performance over epochs, or iterations of training which means how many time we feed the whole training data to the model. After a 45-epoch workout, the model has achieved commendable results, boasting a training accuracy of 93.26% on the last lap. This high level of accuracy is indicative of the model's proficiency in identifying patterns and making correct predictions based on the training data it's been fed. On the flip side, the validation accuracy—a measure of how well our educated network can apply its learning to new, unseen data—stands at 80.15% at the final epoch.
+In machine learning, we often assess a neural network's progress through its performance across epochs, which are iterations where the entire set of training data is presented to the model. After 45 epochs, our model has shown impressive results, achieving a training accuracy of 93.26%. This high accuracy demonstrates the model's ability to recognise patterns and make correct predictions from the training data. However, the validation accuracy, which measures the model's effectiveness on new, unseen data, is lower, standing at 80.15% at the last epoch. This indicates how the model performs outside its training environment.
 
 ![Result](https://i.pinimg.com/originals/31/90/1f/31901fa1655ae67faf2053006b2c7b0b.png)
 
-Now, peering into the graphical story of the model's journey, we observe the blue line of training accuracy ascending steadily, a testament to the network's growing intelligence. The validation accuracy, depicted in orange, shows a more undulating journey, reflective of the real-world challenges and the diversity of unseen data it encounters. The graphs also tell a tale of loss—training loss, that is. Here, we see a plummeting blue line, signalling that the model is getting better at reducing errors during training, with the final figure standing at a meager 0.1881.
+In the training accuracy graph, we see a steady increase in the blue line, indicating that the model's performance is improving over time. The validation accuracy, shown in orange, varies more, suggesting that the model is dealing with diverse and unpredictable data when tested. The graphs also display the model's training loss, which is represented by a declining blue line. This drop signifies that the model is becoming more effective at minimising errors during training, ending with a low value of 0.1881.
 
-However, as is often the case in the twist and turns of machine learning, our model, while a keen learner, shows signs of overfitting. The validation loss, initially in step with the training loss, begins to climb, peaking at 0.8483. This divergence between training and validation loss suggests that while our model is acing the training exams, it's not quite as adept when faced with the unexpected questions of the validation set.
+In machine learning, it's common for models to show signs of overfitting, and that's what's happening with mine. Initially, the validation loss was similar to the training loss, but over time it began to increase, reaching a high of 0.8483. This growing gap between the training and validation loss indicates that while my model performs well on the training data, it struggles to generalise to new, unseen data in the validation set.
 
-Taking the model out for a final test, away from the comfort of the training and validation sets, it scores 78% on the testing set. This final figure, a modest dip from the validation accuracy, raises the curtain on the practical application of our model: a robust performer but with room for growth, much like a bright student who excels in the classroom yet still finds new situations a test of their mettle.
+On a side note, each epoch takes around 10 seconds to run. This is a massive success where compared to CPU performance, it is a whopping 6 times faster.
 
-On a side note, each epoch takes around 10 seconds to run. This is a massive success where compared to CPU performance, it is a whopping 6 times faster. 
-
-All in all, the graphs and figures weave a narrative of triumph, where the model attained commendable accuracy. It's not the epitome of perfection, but it stands as a promising foundation, with much opportunity for refinement and enhancement.
+All in all, the graphs and figures story tell a story of success, where the model got decent accuracy. It's not perfect due to overfitting, but it stands as a promising foundation, with much opportunity for refinement.
 
 # What's Next
 
