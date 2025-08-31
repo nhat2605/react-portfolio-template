@@ -43,7 +43,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 <div className="grid grid-cols-1">
                   <Button onClick={handleAboutScroll}>About</Button>
                   <Button onClick={handleWorkScroll}>Work</Button>
-                  <Button onClick={() => router.push("/playground")}>Playground</Button>
+                  {/* <Button onClick={() => router.push("/playground")}>Playground</Button> */}
                   {showBlog && (
                     <Button onClick={() => router.push("/blog")}>Blog</Button>
                   )}
