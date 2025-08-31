@@ -69,22 +69,36 @@
       "description": "Builds and optimizes online presence. Website acts as the digital entry point into the business and a powerful revenue channel."
     }
   ],
-  "aboutpara": "Welcome to my personal corner on the web! 🌐 My name is Nhat, a 20-year-old software engineering student at the University of Sydney.  This website serves as both a professional showcase of my journey and skills in software engineering and a creative outlet where I share my projects and ideas. 💡 Balancing my studies with my passion for technology, I often find myself immersed in coding and creating, exploring new technologies and methodologies that catch my eye. It's not just a portfolio; it's a platform where I document and share my creative pursuits, thanks to the ample time my curiosity affords me. ⏳||As you journey through this site, witnessing the milestones of my academic and creative endeavors, I hope you find pieces of my passion and dedication that resonate with you. I warmly welcome your thoughts, feedback, or even a simple hello. Thank you for visiting, and may you discover something here that sparks your own creativity and curiosity! ✨",
+  "aboutpara": "Welcome to my personal corner on the web! 🌐 My name is Nhat, a 22-year-old software engineering student at the University of Sydney.  This website serves as both a professional showcase of my journey and skills in software engineering and a creative outlet where I share my projects and ideas. 💡 Balancing my studies with my passion for technology, I often find myself immersed in coding and creating, exploring new technologies and methodologies that catch my eye. It's not just a portfolio; it's a platform where I document and share my creative pursuits, thanks to the ample time my curiosity affords me. ⏳||As you journey through this site, witnessing the milestones of my academic and creative endeavors, I hope you find pieces of my passion and dedication that resonate with you. I warmly welcome your thoughts, feedback, or even a simple hello. Thank you for visiting, and may you discover something here that sparks your own creativity and curiosity! ✨",
   "resume": {
     "tagline": "👋  I'm a software engineer",
     "description": "I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameworks.",
     "experiences": [
       {
         "id": "1",
-        "dates": "Nov 2023 - Feb 2024",
+        "dates": "Jan 2025 - Jul 2025",
         "type": "Internship",
-        "position": "Full Stack Engineer at Naturalab Pty Ltd",
-        "bullets": "Developed and maintained an employee management web application using NodeJS, React, and TailwindCSS|Designed and maintained a management-focused database, enhancing data storage and retrieval efficiency|Created a REST API with Django for database and web application integration|Collaborated with teams and end user to refine software requirements and solve technical issues"
+        "position": "Quant Apps Engineer Intern at Commonwealth Bank of Australia",
+        "bullets": "Developed intuitive and responsive user interfaces for IB&M applications using React, improving user engagement and operational efficiency|Produced a research paper on implementing error tracking software (Sentry) in IB&M’s applications as part of Honours programme|Performed comprehensive unit and end-to-end testing, raising test coverage from 30% to over 80% to meet team benchmark and reduce bugs|Proactively participated in code reviews to ensure maintainable and scalable frontend code aligned with industry best practices|Collaborated with backend Modelling engineers to design and deliver meaningful features that integrated seamlessly into IB&M applications"
+      },
+      {
+        "id": "2",
+        "dates": "Dec 2024 – Present",
+        "type": "Contract",
+        "position": "Front End Developer at Nexacompute Pty Ltd",
+        "bullets": "Maintained, designed, and developed a Laboratory Information Management System (LIMS) using Angular|Designed unit, integration, and end-to-end tests with Karma, Jasmine, and Playwright; achieved and sustained 80%+ test coverage|Built and integrated user interfaces with LLMs fine-tuned on company domain knowledge, boosting analysts’ and lab managers’ productivity|Constructed CI/CD pipeline using GitHub Actions, ESLint, Prettier, and Husky to enforce code quality and coverage; reduced deployment time by 60%"
+      },
+      {
+        "id": "3",
+        "dates": "Oct 2023 - Feb 2024",
+        "type": "Internship",
+        "position": "Full Stack Developer Intern at Naturalab Pty Ltd",
+        "bullets": "Developed and maintained an employee management web application using React and Tailwind CSS|Designed and maintained a PostgreSQL management-focused database, enhancing data storage and retrieval|Created a REST API with Django to handle authentication, data querying, and entry|Collaborated with teams and end users to refine software requirements and resolve technical issues"
       }
     ],
     "education": {
       "universityName": "The University of Sydney - Bachelor of Engineering Honours (Software Engineering)",
-      "universityDate": "2021-2025 - Penultimate Year",
+      "universityDate": "2021-2025 - Final Year",
       "universityPara": "First-Year Engineering Student Representative"
     },
     "languages": [
